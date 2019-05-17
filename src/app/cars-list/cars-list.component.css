@@ -1,5 +1,10 @@
 table {
   width: 100%;
+  cursor: pointer;
+}
+
+.mat-row:hover {
+  background-color: silver;
 }
 
 .custom-mat-column-picture {
