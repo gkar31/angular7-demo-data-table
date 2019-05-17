@@ -4,13 +4,15 @@ import { CommonModule } from '@angular/common';
 import {
   MatButtonModule,
   MatTableModule,
-  MatChipsModule
+  MatChipsModule,
+  MatProgressSpinnerModule
 } from '@angular/material';
 
 const Material = [
   MatButtonModule,
   MatTableModule,
-  MatChipsModule
+  MatChipsModule,
+  MatProgressSpinnerModule
 ];
 
 

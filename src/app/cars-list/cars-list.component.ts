@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router }  from '@angular/router';
+
 import { CarsService } from './../cars.service';
 import { ICar } from './../car';
+
 
 @Component({
   selector: 'app-cars-list',
@@ -14,13 +17,26 @@ export class CarsListComponent implements OnInit {
   displayedColumns: string[] = ['Picture', 'Name', 'Power', 'Couple', 'Perf'];
 
   dataSource:ICar[] = [];
-  constructor(private _carService: CarsService) { }
+
+  carsLoading = false;
+
+  constructor(private router: Router, private _carService: CarsService) { }
 
   ngOnInit() {
+    this.carsLoading = true;
     this._carService.getCars()
-    .subscribe(data => this.dataSource = data);
+    .subscribe(data => {
+      this.carsLoading=false;
+      this.dataSource = data
+    });
 
 
+  }
+
+  displayCarsDetail(car){
+    console.log(car);
+    this._carService.currentCar = car;
+    this.router.navigate(['/carsList', car._id ]);
   }
 
 }

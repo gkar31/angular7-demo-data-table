@@ -9,11 +9,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { CarsService } from './cars.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
+import { CarDetailComponent } from './car-detail/car-detail.component';
+import { ICar } from './car';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CarsListComponent
+    CarsListComponent,
+    CarDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -25,4 +28,6 @@ import { MaterialModule } from './material/material.module';
   providers: [CarsService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  public currentCar : ICar ;
+ }

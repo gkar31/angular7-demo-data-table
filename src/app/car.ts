@@ -13,5 +13,6 @@ export interface ICar {
   acc_1000m_DA : Number,
   Prix : String,
   Indice_Perf : Number,
-  Image: String
+  Image: String,
+  _id: String
 }

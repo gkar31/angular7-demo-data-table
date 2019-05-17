@@ -9,10 +9,16 @@ import { Observable } from "rxjs/Observable";
 export class CarsService {
 
 private _url: string ='https://musclecars.herokuapp.com/carlist';
+public currentCar:ICar ;
 
   constructor(private http: HttpClient) { }
 
   getCars(): Observable<ICar[]>{
     return this.http.get<ICar[]>(this._url);
+  }
+
+
+  getCar(idCar): Observable<ICar>{
+    return this.http.get<ICar>(this._url+"/"+idCar);
   }
 }
