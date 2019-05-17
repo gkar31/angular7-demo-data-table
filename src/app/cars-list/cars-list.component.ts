@@ -34,7 +34,7 @@ export class CarsListComponent implements OnInit {
   }
 
   displayCarsDetail(car){
-    console.log(car);
+    //console.log(car);
     this._carService.currentCar = car;
     this.router.navigate(['/carsList', car._id ]);
   }
