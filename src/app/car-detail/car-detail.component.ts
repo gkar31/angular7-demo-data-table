@@ -11,8 +11,8 @@ import { ICar } from './../car';
   styleUrls: ['./car-detail.component.css']
 })
 export class CarDetailComponent implements OnInit {
-  public idCar;
-
+  idCar="";
+  carLoading=false;
   constructor(private route: ActivatedRoute ,private _carService: CarsService) { }
 
 public currentCar: ICar;
@@ -20,7 +20,11 @@ public currentCar: ICar;
   ngOnInit() {
     let id = this.route.snapshot.paramMap.get('id');
     this.idCar = id;
-    this._carService.getCar(this.idCar).subscribe(data => this.currentCar = data);
+    this.carLoading=true;
+    this._carService.getCar(this.idCar).subscribe(data => {
+      this.currentCar = data;
+      this.carLoading=false;
+    });
   }
 
 }

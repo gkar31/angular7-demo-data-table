@@ -5,14 +5,16 @@ import {
   MatButtonModule,
   MatTableModule,
   MatChipsModule,
-  MatProgressSpinnerModule
+  MatProgressSpinnerModule,
+  MatCardModule
 } from '@angular/material';
 
 const Material = [
   MatButtonModule,
   MatTableModule,
   MatChipsModule,
-  MatProgressSpinnerModule
+  MatProgressSpinnerModule,
+  MatCardModule
 ];
 
 
